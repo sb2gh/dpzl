@@ -15,7 +15,7 @@ body {
   max-width: 100%;
 }
 
-/*body:before {
+body:before {
   position: absolute;
   top: 0;
   height: 10px;
@@ -27,7 +27,7 @@ body {
   margin: 0;
   padding: 0;
   z-index: 999999;
-}*/
+}
 
 .content {
   margin: 0 auto;
@@ -37,7 +37,7 @@ body {
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
   font: 1em/1.5 'Proxima Nova Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #444; /* Black on white is too much contrast, #333 is a lot better */
+  color: #333; /* Black on white is too much contrast, #333 is a lot better */
 }
 
 blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img, figure, figcaption, button, hr, header {
@@ -472,8 +472,8 @@ ul.tags {
     color: rgba(0,0,0,0.8);
     text-shadow: 0px 1px 0px #fff;
     text-shadow: 0px 1px 0px rgba(255,255,255,0.2);
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 96px;
+    line-height: 96px;
   }
 
 #top-header:hover, #top-header:hover h1 {
@@ -481,7 +481,7 @@ ul.tags {
 }
 
 #main-nav, #main-header {
-  text-align: center;
+  text-align: left;
 }
 
 #main-nav {
@@ -574,8 +574,8 @@ article.divider_0 {
 
 pre {
   border-radius: 0.5em;
-  background: #D3D3D3; /*#333;*/
-  color: #333333; /*white;*/
+  background: #333;
+  color: white;
 }
 
 pre:hover {
@@ -892,7 +892,7 @@ a[href*="/admin"]{
   }
   
   #main-header {
-    margin: 4em 0 0;
+    margin: 10em 0 0;
   }
 
   .author {
@@ -904,7 +904,7 @@ a[href*="/admin"]{
   }
 
   #main-nav, #main-header {
-   text-align: center;
+   text-align: left;
    padding-bottom: 1em
   }
 
@@ -1235,13 +1235,14 @@ pre[class*='language-']:hover {
 }
 
 #las {
-  /*background-color: yellow;
-  color: orange; */
+  background-color: yellow;
+  color: orange; 
   font-size: 70%;
-  font-color: red;
+  font:10px;
 
 }
 #gist-data {
   background-color: red;
   font-size: 70%;
+  font:10px;
 }

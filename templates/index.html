@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}Dpzl{% endblock %}
+
+{% block page_content %}
+<div id="main-header">
+    <h1>Repos, Gists & References</h1>
+</div>
+<section id="articles" class="index">
+	<article>
+		<div class="content">
+			<div class="date">Mar 14, 2015</div>
+			<div class="articlepost">
+				<header>
+					<h2><a href="http://www.practicium.com"><span class="title">Testing</span></a> </h2>
+				</header>
+				<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"&gt;
+				    &lt;CORSRule&gt;
+				        &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;
+				        &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;
+				        &lt;MaxAgeSeconds&gt;3000&lt;/MaxAgeSeconds&gt;
+				        &lt;AllowedHeader&gt;Authorization&lt;/AllowedHeader&gt;
+				        &lt;AllowedHeader&gt;Content-Type&lt;/AllowedHeader&gt;
+				    &lt;/CORSRule&gt;
+				&lt;/CORSConfiguration&gt;
+				</code></pre>
+			</div>
+		</div>
+	</article>
+
+	<article>
+		<div class="content">
+			<p>Heres the relevant gulp <code>build</code> task:</p>
+
+			<pre><code class="language-javascript">
+			gulp.task('build', ['clean'], function () {
+			  gulp.start('default', function() {
+			    return gulp.src('dist/**/*')
+			      .pipe($.size({title: 'build', gzip: true}))
+			      .pipe($.if('*.js', $.gzip({ append: false })))
+			      .pipe($.if('*.css', $.gzip({ append: false })))
+			      .pipe(gulp.dest('dist'))
+			  })
+			})
+			</code></pre>
+		</div>
+	</article>
+
+	<article>
+		<div class="content">
+			<div class="date">Jun 11, 2012</div>
+			<div class="articlepost">
+				<header>
+					<h2><a href="http://www.practicium.com"><span class="title">Listing Files from current condition</span></a> </h2>
+				</header>
+				<p>listing with conditions</p>
+				<pre><code class="language-python">
+				import os
+
+				def list_files_current_directory_w_condition():
+				    lst_files = []
+				    for filename in os.listdir(os.getcwd()):
+				        if filename.endswith(".txt") or filename.endswith(".csv"):
+				            lst_files.append(filename)
+				        else:
+				            continue
+				    return lst_files
+
+				if __name__ == '__main__':
+				    lst_files = list_files_current_directory_w_condition()
+				    print lst_files
+				</code></pre>
+			</div>
+		</div>
+	</article>
+
+<!-- <pre><code class="language-python"> -->
+
+	<article>
+		<div class="content">
+			<div class="date">Sep 12, 2011</div>
+			<div class="articlepost">
+				<header>
+					<h2><a href="http://www.practicium.com"><span class="title">Yahoo historical prices download</span></a> </h2>
+				</header>
+				<p>Yahoo hist prices in python</p>
+				<div id ="las">								
+					<script type="text/javascript" src="http://www.gistfy.com/github/gist/2979db2550323c37bf8d"></script>
+					<!-- </code></pre> -->
+					<!-- <link href="{{ url_for('static', filename='css/central.css') }}" rel="stylesheet"> -->
+				</div>
+			</div>
+		</div>
+	</article>
+</section>
+</div>
+
+{% endblock %}
+
+
+

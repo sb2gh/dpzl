@@ -93,6 +93,58 @@
 			</div>
 		</div>
 	</article>
+
+
+	<article>
+		<div class="content">
+			<div class="date">Aug 11, 2009</div>
+			<div class="articlepost">
+				<header>
+					<h2><a href="http://www.practicium.com"><span class="title">zip files</span></a> </h2>
+				</header>
+				<p>zipping files</p>
+				<pre><code class="language-python">
+				import os
+				import zipfile
+				 
+				 
+				def list_files_current_directory_w_condition(directory=None):
+				    """ List files in either provided directory or current directory if none is provided
+				        with conditions on file extension """
+				    lst_files = []
+				    if directory is None:
+				        directory = os.getcwd()
+				    for filename in os.listdir(directory):
+				        if filename.endswith(".txt") or filename.endswith(".csv"):
+				            lst_files.append(directory + filename)
+				        else:
+				            continue
+				    return lst_files
+				 
+				def zipfiles(lst_files, directory_zip):
+				    """ Create a zip archive for each file listed in lst_files """
+				    for onefile in lst_files:
+				        tmp  = onefile.split('\\')
+				        filename = (tmp[-1].split('.'))[0]
+				        zf = zipfile.ZipFile(directory_zip + filename +'.zip', 'w', zipfile.ZIP_DEFLATED)
+				        arcname = filename
+				        zf.write(onefile, filename)
+				        zf.close()
+				 
+				 
+				if __name__ == '__main__':
+				    directory = 'C:\\test\\'
+				    directory_zip = 'C:\\test_zip\\'
+				    lst_files = list_files_current_directory_w_condition()
+				    print lst_files
+				    zipfiles(lst_files, directory_zip)
+				</code></pre>
+			</div>
+		</div>
+	</article>				    
+
+
+
 </section>
 </div>
 
